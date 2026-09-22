@@ -1,0 +1,23 @@
+{
+  "brand": "PS4",
+  "brandSub": "MODS",
+  "code": "404",
+  "title": "Pagina nu există",
+  "body": " ",
+  "hintOpen": "Deschide",
+  "hintNav": "Navighează",
+  "links": [
+    {
+      "label": "Hub",
+      "href": "/index.html"
+    },
+    {
+      "label": "Payloads",
+      "href": "/payloads.html"
+    },
+    {
+      "label": "Readme",
+      "href": "/readme.html"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# game saves / avatar packs / homebrew installers -- not this repo's content,
+# see packages/README.md
+/packages/*.pkg
+/packages/ExtraGames/
+
+# per-source .git dirs on the live server (each payloads/* is its own
+# checkout there for the auto-update mechanism) -- this repo tracks their
+# files directly instead, as one unified history
+.git/
+!/.git
+
+# stray artifacts from the update script, shouldn't normally exist
+.clone_tmp_*
+.stale_*
+*.pre-git.*

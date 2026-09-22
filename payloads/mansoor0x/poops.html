@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mansoor0x / poops</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: #000;
+    color: #c0c0c0;
+    font: 400 14px/1.7 "Courier New", Courier, monospace;
+    padding: 32px 28px;
+    min-height: 100vh;
+}
+
+#title {
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: .06em;
+    margin-bottom: 24px;
+}
+
+/* #state — written by chain_poops.mjs */
+#state {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 18px;
+    min-height: 26px;
+    letter-spacing: -.01em;
+}
+
+/* #out — log written by chain_poops.mjs */
+#out {
+    white-space: pre-wrap;
+    font: 11px/1.75 "Courier New", Courier, monospace;
+    color: #555;
+    max-height: 75vh;
+    overflow-y: auto;
+    word-break: break-all;
+}
+
+#out .ok   { color: #c0c0c0; }
+#out .warn { color: #d4a017; }
+#out .err  { color: #f66; }
+#out .dim  { color: #333; }
+
+#sep {
+    border: none;
+    border-top: 1px solid #111;
+    margin: 16px 0;
+}
+</style>
+</head>
+<body>
+
+<div id="title">mansoor0x / poops</div>
+
+<hr id="sep">
+
+<!-- chain_poops.mjs writes to #state and #out -->
+<div id="state">loading…</div>
+<div id="out"></div>
+
+<script type="module" src="chain_poops.mjs"></script>
+</body>
+</html>

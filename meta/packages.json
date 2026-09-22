@@ -1,0 +1,20 @@
+{
+  "brand": "PS4",
+  "brandSub": "MODS",
+  "section": "Package Installer",
+  "back": "← Înapoi",
+  "title": "Pachete din /packages",
+  "subtitle": "Selectează un fișier .pkg și consola îl descarcă direct de pe serverul local prin Remote Package Installer. Necesită Debug Settings active pe PS4.",
+  "hostLabel": "IP consolă",
+  "foundLabel": "Găsite",
+  "reload": "Reîncarcă",
+  "actionInstall": "Instalează",
+  "actionSent": "Trimis",
+  "emptyTitle": "Niciun pachet găsit",
+  "emptyBody": "Pune fișierele .pkg în folderul packages/ de lângă index.html. Dacă serverul nu listează directoare, pune packages/packages.php — generează lista automat la fiecare accesare.",
+  "infoTitle": "Înainte de instalare",
+  "infoBody": "Activează pe consolă Settings → Debug Settings → Game → Package Installer → Remote Package Install (serviciul ascultă pe portul 12800). Trimiterea e „fire and forget”: pagina nu poate citi răspunsul consolei, așa că urmărește progresul în Notifications / Download list pe PS4.",
+  "hintInstall": "Instalează",
+  "hintNav": "Navighează",
+  "readmeLink": "Readme"
+}

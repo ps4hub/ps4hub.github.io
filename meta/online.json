@@ -1,0 +1,43 @@
+{
+  "brand": "PS4",
+  "brandSub": "MODS",
+  "section": "Exploituri online",
+  "back": "← Înapoi",
+  "title": "Exploituri online",
+  "subtitle": "Variantele găzduite pe internet — consola trebuie să aibă acces online.",
+  "hintOpen": "Deschide",
+  "hintNav": "Navighează",
+  "readmeLink": "Readme",
+  "tiles": [
+    {
+      "label": "WebKitty",
+      "title": "WebKitty",
+      "sub": "webkitty.arabpixel.net",
+      "href": "https://webkitty.arabpixel.net/"
+    },
+	{
+      "label": "mansoor0x",
+      "title": "mansoor0x",
+      "sub": "mansoor0x.github.io/polpNO",
+      "href": "https://mansoor0x.github.io/polpNO/"
+    },
+    {
+      "label": "raw13g",
+      "title": "raw13g",
+      "sub": "raw13g.github.io",
+      "href": "https://raw13g.github.io/"
+    },
+    {
+      "label": "psx8 pulse",
+      "title": "psx8 pulse",
+      "sub": "psx8.github.io",
+      "href": "https://psx8.github.io/"
+    },
+    {
+      "label": "rawgame",
+      "title": "mariope - rawgame",
+      "sub": "zrm.mariope.dev",
+      "href": "https://zrm.mariope.dev/"
+    }
+  ]
+}

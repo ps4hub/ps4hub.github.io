@@ -1,0 +1,42 @@
+{
+  "brand": "PS4",
+  "brandSub": "MODS",
+  "section": "Payloads",
+  "back": "← Înapoi",
+  "title": "Payloads",
+  "subtitle": "Alege un payload și apasă X ca să-l încarci pe consolă.",
+  "hintOpen": "Deschide",
+  "hintNav": "Navighează",
+  "readmeLink": "Readme",
+  "tiles": [
+    {
+      "icon": "stack",
+      "label": "WebKitty",
+      "title": "WebKitty 6.70 - 13.52",
+      "sub": "PS4 exploit host for 6.70 - 13.52",
+      "href": "payloads/webkitty/index.html"
+    },
+    {
+      "icon": "stack",
+      "label": "mansoor0x",
+      "title": "mansoor0x 9.00 – 13.52",
+      "sub": "polpNO · webkit exploit · 9.00 – 13.52",
+      "href": "payloads/mansoor0x/index.html"
+    },
+    {
+      "icon": "stack",
+      "label": "raw13g",
+      "title": "raw13g 13.02 – 13.52",
+      "sub": "raw13g · webkit exploit · 13.02 – 13.52",
+      "href": "payloads/raw13g/index.html"
+    }
+	,
+    {
+      "icon": "stack",
+      "label": "PSPULSE",
+      "title": "PSPULSE 5.05 – 13.00",
+      "sub": "PSPULSE // PS4 HOSTS · 5.05 – 13.00",
+      "href": "payloads/PSPULSE/index.html"
+    }
+  ]
+}

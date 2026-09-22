@@ -1,0 +1,46 @@
+Unelte de retea locale (Windows, fara instalari)
+================================================
+
+Porneste cu dublu-click pe "Start Server.bat".
+Fereastra are trei tab-uri.
+
+
+1. Webserver
+------------
+Serveste un folder prin HTTP.
+- "Folder servit" e deja folderul cu index.html.
+- Porneste -> adresa apare ca link pe care poti da clic.
+- Deschise direct din File Explorer (file://), paginile nu pot citi fisierele
+  din meta/ - browserul blocheaza asta. Prin acest server merge.
+- Pentru acces de pe PS4 / din retea: bifeaza "Acces din retea" SI porneste
+  .bat-ul cu clic dreapta > Run as administrator (HTTP.sys cere asta).
+- Fisierele sunt servite cu no-cache: editezi un JSON din meta/, dai refresh.
+
+
+2. Ascultare port
+-----------------
+Deschide un port si doar asculta - nu serveste nimic. Bun ca sa verifici de
+pe alt calculator / de pe consola daca portul chiar e accesibil.
+- Alegi portul si protocolul: TCP, UDP sau ambele.
+- "Asculta pe toate interfetele (0.0.0.0)" = vizibil din retea.
+  (aici NU e nevoie de Administrator, spre deosebire de tab-ul Webserver)
+- "Raspunde clientului (echo)" trimite inapoi un scurt "OK", util cand testezi
+  cu telnet / nc / cu tab-ul Test port de pe alt PC.
+- In log apare cine s-a conectat si ce a trimis.
+- Daca firewall-ul Windows intreaba, permite accesul pe reteaua privata.
+
+
+3. Test port
+------------
+Verifica daca un IP:port raspunde.
+- IP / host: ex. 10.0.0.2 sau 192.168.1.15
+- Port: un singur port (9090) sau un interval (9000-9010, maxim 200 porturi)
+- TCP: "DESCHIS" = conexiunea a reusit.
+- UDP: protocolul nu confirma nimic. Raspuns primit = deschis; "ICMP port
+  unreachable" = inchis; tacere = deschis sau filtrat (rezultat normal).
+- "Ping ICMP" pinguie continuu pana apesi "Opreste ping"; vezi trimise /
+  raspunsuri / pierdute pe linia lui, separat de rezultatul portului.
+  IMPORTANT: ping-ul verifica GAZDA, nu portul. Un IP poate raspunde la ping
+  cu toate porturile inchise - si invers, multe console ignora ping-ul desi
+  au porturi deschise. Doar linia "PORT ..." spune ceva despre port.
+- Timeout: 1000 ms e ok in LAN; creste-l daca reteaua e lenta.

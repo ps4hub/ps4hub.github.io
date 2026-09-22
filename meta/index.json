@@ -1,0 +1,43 @@
+{
+  "brand": "PS4",
+  "brandSub": "MODS",
+  "fwLabel": "FW",
+  "jbTitle": "Status GoldHEN pe consolă (verificat live de server)",
+  "jbOn": "Deblocat",
+  "jbOff": "Blocat",
+  "hintSelect": "Selectează",
+  "hintNav": "Navighează",
+  "shutdown": "Oprire automată server",
+  "shutdownTitle": "Oprește automat serverul după ce GoldHEN pornește pe consolă",
+  "warnTitle": "GoldHEN e deja activ",
+  "warnBody": "Consola pare sa aiba deja GoldHEN pornit. Rularea exploit-ului din nou poate cauza un crash sau pur si simplu nu are efect. Continui oricum?",
+  "warnCancel": "Anulează",
+  "warnConfirm": "Rulează oricum",
+  "tiles": [
+    {
+      "label": "RawGame",
+      "title": "Gomgo-RawGame",
+      "sub": "PS4 11.50 - 13.00"
+    },
+    {
+      "label": "Payloads",
+      "title": "Payloads",
+      "sub": "Alte payload-uri, într-un singur loc"
+    },
+    {
+      "label": "Online",
+      "title": "Exploituri online",
+      "sub": "Variantele găzduite pe internet, dacă serverul local nu merge"
+    },
+    {
+      "label": "Packages",
+      "title": "Package Installer",
+      "sub": "Instalează .pkg din folderul packages direct pe consolă"
+    },
+    {
+      "label": "Readme",
+      "title": "Readme",
+      "sub": "Setup server, rețea, surse de payload și documentație"
+    }
+  ]
+}
