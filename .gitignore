@@ -13,3 +13,4 @@
 .clone_tmp_*
 .stale_*
 *.pre-git.*
+.git-credentials-pages
