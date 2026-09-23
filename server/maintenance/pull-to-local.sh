@@ -20,6 +20,7 @@ rsync -av \
   --exclude='packages/README.md' \
   --exclude='.git-credentials-pages' \
   --exclude='server/' \
+  --exclude='screenshots/' \
   "$SYNC_DIR"/ "$WWW_DIR"/
 
 echo "== proprietar/permisiuni pe folderele care trebuie sa ramana scriptibile de www-data =="

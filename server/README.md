@@ -102,6 +102,9 @@ chown www-data:www-data /var/www /var/www/payloads
 chown -R www-data:www-data /var/www/payloads
 ```
 
+
+**Any-path fallback:** `location /` falls back to `index.html` for any unmatched path, not a 404. This is what lets the hub open from the PS4 without the browser app: point the console's network proxy at this server, then Settings → System → User's Guide sends a request through it for a fixed Sony URL whose exact path varies by firmware — the catch-all means whatever path it asks for still opens the hub. The trade-off: a genuinely broken link under the site (e.g. a missing image) also silently serves the hub instead of a real 404.
+
 ## dnsmasq (optional — dedicated PS4 network)
 
 The reference setup gives the PS4 its own Ethernet segment with no internet:

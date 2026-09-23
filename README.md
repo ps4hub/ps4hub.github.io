@@ -13,6 +13,14 @@ This repo is a **synced mirror** of a working local deployment (nginx + PHP-FPM 
 - **Online** — links out to the internet-hosted versions of the same exploits, as a fallback if the local server isn't reachable (rawgame selected by default).
 - **Info** — an update checker showing each exploit source's status against its upstream GitHub repo (commit + date per source, updatable in place via `git pull`/`git clone`), how the auto-shutdown works, and links to the ConsoleMods wiki.
 
+## Screenshots
+
+| | |
+|---|---|
+| ![Hub — Romanian](screenshots/hub_ro.png) Hub (RO), RawGame centered | ![Hub — English](screenshots/hub_en.png) Hub (EN) |
+| ![Info page](screenshots/info_ro.png) Info — update checker | ![Payloads](screenshots/payloads_ro.png) Payloads, WebKitty centered |
+| ![Online](screenshots/online_en.png) Online exploits (EN) | ![Packages](screenshots/packages_ro.png) Package installer |
+
 ## Structure
 
 ```
