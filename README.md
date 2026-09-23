@@ -1,6 +1,22 @@
+<div align="center">
+
+<img src="assets/logo.png" width="180" alt="ps4hub logo">
+
 # ps4hub
 
-A self-hosted, local-network webserver that acts as a **central hub for PS4 WebKit-based jailbreak exploits** — a single landing page for a PS4 to reach on an isolated LAN, offering several known WebKit exploit chains, GoldHEN status, and a package installer, without the console ever needing internet access.
+**A self-hosted hub for PS4 WebKit-based jailbreak exploits — one page, several exploit chains, zero internet on the console.**
+
+*Romanian / English · runs entirely on your own local network*
+
+[![GitHub stars](https://img.shields.io/github/stars/robex2005/ps4hub?style=flat-square&color=9184d9)](https://github.com/robex2005/ps4hub/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/robex2005/ps4hub?style=flat-square&color=9184d9)](https://github.com/robex2005/ps4hub/issues)
+[![Console](https://img.shields.io/badge/console-offline--only-06255c?style=flat-square)](#self-hosting)
+
+[Screenshots](#screenshots) • [What it does](#what-it-does) • [Structure](#structure) • [Credits](#credits) • [Self-hosting](#self-hosting)
+
+</div>
+
+A single landing page for a PS4 to reach on an isolated LAN, offering several known WebKit exploit chains, GoldHEN status, and a package installer, without the console ever needing internet access.
 
 This repo is a **synced mirror** of a working local deployment (nginx + PHP-FPM on a Raspberry Pi). It's meant to be cloned onto your own local server, not run as a public website — the PS4 connects to it over a private, isolated network segment with no internet access, by design.
 
