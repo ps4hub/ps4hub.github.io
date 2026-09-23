@@ -1,0 +1,82 @@
+#!/usr/bin/env php
+<?php
+// fake-ps4 — simulates a PS4 on this rpi so the hub can be tested without the console.
+//
+//   fake-ps4                 console on, answers PS4 Device Discovery (UDP 987)
+//   fake-ps4 standby         console in rest mode (hub shows the IP dimmed)
+//   fake-ps4 goldhen         console on + GoldHEN payloader listening on TCP 9090
+//   fake-ps4 goldhen 120     same, for 120 seconds (default 300); Ctrl+C stops it
+//   --fw=11.00               firmware the fake console reports (default 13.00)
+//
+// The detected IP is this rpi's own address. On exit it removes what it caused
+// (/etc/luckfox-hub/ps4_ip if it points at this rpi, and the detection cache)
+// and, after a goldhen run, restarts auto_shutdown so the fake detection doesn't linger.
+
+$fw = '13.00';
+$args = [];
+foreach (array_slice($argv, 1) as $a) {
+    if (strpos($a, '--fw=') === 0) $fw = substr($a, 5); else $args[] = $a;
+}
+$mode = $args[0] ?? 'on';
+$secs = (int)($args[1] ?? 300);
+if (!in_array($mode, ['on', 'standby', 'goldhen'], true) || $secs < 1 || !preg_match('/^(\d{1,2})\.(\d{2})$/', $fw, $fwm)) {
+    fwrite(STDERR, "usage: fake-ps4 [on|standby|goldhen] [seconds] [--fw=13.00]\n");
+    exit(2);
+}
+$sysver = sprintf('%02d%02d0000', $fwm[1], $fwm[2]);
+if (posix_geteuid() !== 0) { fwrite(STDERR, "run as root (UDP 987 is a privileged port)\n"); exit(1); }
+
+$flag = '/etc/luckfox-hub/auto_shutdown.enabled';
+if ($mode === 'goldhen' && file_exists($flag)) {
+    fwrite(STDERR, "Refusing: the hub's auto-shutdown checkbox is ON — faking GoldHEN would power the rpi off in 5 minutes.\nUntick it on the hub first.\n");
+    exit(1);
+}
+
+$ddp = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+socket_set_option($ddp, SOL_SOCKET, SO_REUSEADDR, 1);
+if (!@socket_bind($ddp, '0.0.0.0', 987)) { fwrite(STDERR, "cannot bind UDP 987: " . socket_strerror(socket_last_error()) . "\n"); exit(1); }
+
+$tcp = null;
+if ($mode === 'goldhen') {
+    $tcp = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+    socket_set_option($tcp, SOL_SOCKET, SO_REUSEADDR, 1);
+    if (!@socket_bind($tcp, '0.0.0.0', 9090) || !socket_listen($tcp)) { fwrite(STDERR, "cannot listen on TCP 9090 (something already uses it?)\n"); exit(1); }
+}
+
+$myIps = array_filter(array_map('trim', explode(' ', (string)shell_exec('hostname -I'))));
+$cleanup = function () use ($myIps, $mode) {
+    $f = '/etc/luckfox-hub/ps4_ip';
+    if (in_array(trim((string)@file_get_contents($f)), $myIps, true)) @unlink($f);
+    @unlink(sys_get_temp_dir() . '/ps4hub_console.json');
+    // the daemon saw the fake GoldHEN and is now waiting for the checkbox; reset it so
+    // ticking the box later doesn't power the rpi off because of this test
+    if ($mode === 'goldhen') shell_exec('systemctl restart auto_shutdown');
+    echo "\nfake-ps4 stopped, cleaned up.\n";
+    exit(0);
+};
+pcntl_async_signals(true);
+pcntl_signal(SIGINT, $cleanup);
+pcntl_signal(SIGTERM, $cleanup);
+@unlink(sys_get_temp_dir() . '/ps4hub_console.json');
+
+$status = $mode === 'standby' ? 'HTTP/1.1 620 Server Standby' : 'HTTP/1.1 200 Ok';
+$reply = "$status\nhost-id:0123456789AB\nhost-type:PS4\nhost-name:FakePS4\nhost-request-port:997\n"
+       . "device-discovery-protocol-version:00020020\nsystem-version:$sysver\n";
+
+echo "fake-ps4: mode=$mode fw=$fw for {$secs}s on " . implode(', ', $myIps) . ($tcp ? " (GoldHEN on :9090)" : "") . "\n";
+echo "Open the hub — the IP should appear next to FW within ~15s. Ctrl+C to stop.\n";
+
+$end = time() + $secs;
+while (time() < $end) {
+    $r = $tcp ? [$ddp, $tcp] : [$ddp]; $w = null; $e = null;
+    if (@socket_select($r, $w, $e, 1) < 1) continue;
+    foreach ($r as $s) {
+        if ($s === $tcp) { $c = @socket_accept($tcp); if ($c) socket_close($c); continue; }
+        $buf = ''; $ip = ''; $port = 0;
+        if (@socket_recvfrom($ddp, $buf, 1024, 0, $ip, $port) && strpos($buf, 'SRCH') === 0) {
+            socket_sendto($ddp, $reply, strlen($reply), 0, $ip, $port);
+            echo date('H:i:s') . "  answered discovery from $ip\n";
+        }
+    }
+}
+$cleanup();

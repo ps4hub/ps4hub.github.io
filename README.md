@@ -26,6 +26,8 @@ payloads/
     own upstream repo so the whole hub works with zero internet access
 packages/
     intentionally empty in this repo, see packages/README.md
+server/
+    scripts and configs that go outside the web root — see server/README.md
 *.php
     console_ip.php      finds the PS4 on the server's networks (PS4 Device Discovery
                         on UDP 987, or a DHCP lease) and reports its IP, name and firmware
@@ -55,6 +57,6 @@ Requires nginx + PHP-FPM (with the `sockets` extension, used for console detecti
 
 The update checker (on `info.html`) discovers tracked sources from `meta/info.json`'s `updateDirs` list — each entry is a folder containing a `.url` shortcut pointing at its GitHub repo. Add a new folder + `.url` file and list it in `updateDirs` to track another source; delete the entry to stop tracking it.
 
-The auto-shutdown daemon itself (a small shell script run as a systemd service, which powers the server off a few minutes after GoldHEN appears on port 9090 when the hub's checkbox is ticked) lives outside the web root and is not part of this repo.
+Files that belong outside the web root are in [`server/`](server/README.md), with install steps for each: the auto-shutdown daemon and its systemd unit, the `fake-ps4` test simulator, the nginx site config, the dnsmasq config for a dedicated PS4 network, and the pull-from-GitHub maintenance script. Don't copy `server/` into the web root.
 
 On the static GitHub Pages mirror there is no PHP, so console detection, the GoldHEN badge, auto-shutdown and the in-place **Update** button don't work there — the pages and the update-status check (which runs in the browser against the GitHub API) do.
