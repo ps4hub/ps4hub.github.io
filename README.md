@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo.png" width="180" alt="ps4hub logo">
+<img src="assets/logo.png" width="72" alt="ps4hub icon">
 
 # ps4hub
 
