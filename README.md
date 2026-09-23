@@ -8,8 +8,8 @@
 
 *Romanian / English · runs entirely on your own local network*
 
-[![GitHub stars](https://img.shields.io/github/stars/robex2005/ps4hub?style=flat-square&color=9184d9)](https://github.com/robex2005/ps4hub/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/robex2005/ps4hub?style=flat-square&color=9184d9)](https://github.com/robex2005/ps4hub/issues)
+[![GitHub stars](https://img.shields.io/github/stars/ps4hub/ps4hub.github.io?style=flat-square&color=9184d9)](https://github.com/ps4hub/ps4hub.github.io/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/ps4hub/ps4hub.github.io?style=flat-square&color=9184d9)](https://github.com/ps4hub/ps4hub.github.io/issues)
 [![Console](https://img.shields.io/badge/console-offline--only-06255c?style=flat-square)](#self-hosting)
 
 [Screenshots](#screenshots) • [What it does](#what-it-does) • [Structure](#structure) • [Credits](#credits) • [Self-hosting](#self-hosting)
