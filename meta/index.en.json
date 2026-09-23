@@ -1,0 +1,52 @@
+{
+  "pageTitle": "PS4 MODS — Hub",
+  "metaDescription": "Local PS4 jailbreak hub: exploits, payloads, package installer and GoldHEN status.",
+  "brand": "PS4",
+  "brandSub": "MODS",
+  "fwLabel": "FW",
+  "jbTitle": "GoldHEN status on the console (checked live by the server)",
+  "consoleTitle": "Console detected on the network",
+  "consoleStandby": "rest mode",
+  "jbOn": "Unlocked",
+  "jbOff": "Locked",
+  "hintSelect": "Select",
+  "hintNav": "Navigate",
+  "shutdown": "Auto server shutdown",
+  "shutdownTitle": "Automatically shut the server down once GoldHEN starts on the console",
+  "warnTitle": "GoldHEN is already active",
+  "warnBody": "The console seems to have GoldHEN running already. Running the exploit again may cause a crash or simply have no effect. Continue anyway?",
+  "warnCancel": "Cancel",
+  "warnConfirm": "Run anyway",
+  "tiles": [
+    {
+      "key": "packages",
+      "label": "Packages",
+      "title": "Package Installer",
+      "sub": "Install .pkg files from the packages folder straight to the console"
+    },
+    {
+      "key": "payloads",
+      "label": "Payloads",
+      "title": "Payloads",
+      "sub": "Other payloads, all in one place"
+    },
+    {
+      "key": "rawgame",
+      "label": "RawGame",
+      "title": "Gomgo-RawGame",
+      "sub": "PS4 11.50 - 13.00"
+    },
+    {
+      "key": "online",
+      "label": "Online",
+      "title": "Online exploits",
+      "sub": "The internet-hosted versions, if the local server doesn't work"
+    },
+    {
+      "key": "info",
+      "label": "Info",
+      "title": "Info",
+      "sub": "Payload updates, auto shutdown and documentation"
+    }
+  ]
+}

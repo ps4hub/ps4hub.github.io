@@ -1,8 +1,12 @@
 {
+  "pageTitle": "PS4 MODS — Hub",
+  "metaDescription": "Hub local pentru jailbreak PS4: exploit-uri, payload-uri, instalare de pachete și status GoldHEN.",
   "brand": "PS4",
   "brandSub": "MODS",
   "fwLabel": "FW",
   "jbTitle": "Status GoldHEN pe consolă (verificat live de server)",
+  "consoleTitle": "Consolă detectată în rețea",
+  "consoleStandby": "în repaus",
   "jbOn": "Deblocat",
   "jbOff": "Blocat",
   "hintSelect": "Selectează",
@@ -15,29 +19,34 @@
   "warnConfirm": "Rulează oricum",
   "tiles": [
     {
+      "key": "packages",
+      "label": "Pachete",
+      "title": "Instalare pachete",
+      "sub": "Instalează .pkg din folderul packages direct pe consolă"
+    },
+    {
+      "key": "payloads",
+      "label": "Payload-uri",
+      "title": "Payload-uri",
+      "sub": "Alte payload-uri, într-un singur loc"
+    },
+    {
+      "key": "rawgame",
       "label": "RawGame",
       "title": "Gomgo-RawGame",
       "sub": "PS4 11.50 - 13.00"
     },
     {
-      "label": "Payloads",
-      "title": "Payloads",
-      "sub": "Alte payload-uri, într-un singur loc"
-    },
-    {
+      "key": "online",
       "label": "Online",
       "title": "Exploituri online",
       "sub": "Variantele găzduite pe internet, dacă serverul local nu merge"
     },
     {
-      "label": "Packages",
-      "title": "Package Installer",
-      "sub": "Instalează .pkg din folderul packages direct pe consolă"
-    },
-    {
-      "label": "Readme",
-      "title": "Readme",
-      "sub": "Setup server, rețea, surse de payload și documentație"
+      "key": "info",
+      "label": "Info",
+      "title": "Info",
+      "sub": "Actualizări payload-uri, oprire automată și documentație"
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
   "pageTitle": "PS4 MODS — Payloads",
-  "metaDescription": "Payload-urile PS4 găzduite pe serverul local.",
+  "metaDescription": "PS4 payloads hosted on the local server.",
   "brand": "PS4",
   "brandSub": "MODS",
   "section": "Payloads",
-  "back": "← Înapoi",
+  "back": "← Back",
   "title": "Payloads",
-  "subtitle": "Alege un payload și apasă X ca să-l încarci pe consolă.",
-  "hintOpen": "Deschide",
-  "hintNav": "Navighează",
+  "subtitle": "Pick a payload and press X to load it on the console.",
+  "hintOpen": "Open",
+  "hintNav": "Navigate",
   "readmeLink": "Info",
   "tiles": [
     {

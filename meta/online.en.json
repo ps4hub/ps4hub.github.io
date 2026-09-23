@@ -1,14 +1,14 @@
 {
   "pageTitle": "PS4 MODS — Online",
-  "metaDescription": "Variantele online ale exploit-urilor PS4, pentru când serverul local nu merge.",
+  "metaDescription": "Online-hosted PS4 exploits, for when the local server does not work.",
   "brand": "PS4",
   "brandSub": "MODS",
-  "section": "Exploituri online",
-  "back": "← Înapoi",
-  "title": "Exploituri online",
-  "subtitle": "Variantele găzduite pe internet — consola trebuie să aibă acces online.",
-  "hintOpen": "Deschide",
-  "hintNav": "Navighează",
+  "section": "Online exploits",
+  "back": "← Back",
+  "title": "Online exploits",
+  "subtitle": "The internet-hosted versions — the console needs online access.",
+  "hintOpen": "Open",
+  "hintNav": "Navigate",
   "readmeLink": "Info",
   "tiles": [
     {

@@ -1,4 +1,6 @@
 {
+  "pageTitle": "PS4 MODS — Package Installer",
+  "metaDescription": "Instalează pachete .pkg de pe serverul local direct pe PS4 prin Remote Package Installer.",
   "brand": "PS4",
   "brandSub": "MODS",
   "section": "Package Installer",
@@ -16,5 +18,5 @@
   "infoBody": "Activează pe consolă Settings → Debug Settings → Game → Package Installer → Remote Package Install (serviciul ascultă pe portul 12800). Trimiterea e „fire and forget”: pagina nu poate citi răspunsul consolei, așa că urmărește progresul în Notifications / Download list pe PS4.",
   "hintInstall": "Instalează",
   "hintNav": "Navighează",
-  "readmeLink": "Readme"
+  "readmeLink": "Info"
 }

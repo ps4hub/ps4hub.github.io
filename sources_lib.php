@@ -1,6 +1,6 @@
 <?php
 // Descopera sursele urmarite pentru update-checker: fiecare folder din
-// meta/readme.json -> "updateDirs" trebuie sa contina un fisier .url
+// meta/info.json -> "updateDirs" trebuie sa contina un fisier .url
 // (shortcut standard, cu o linie "URL=https://github.com/<owner>/<repo>").
 // Asta e sursa unica de adevar -- atat listarea (list_sources.php) cat si
 // actualizarea (update_payload.php) folosesc aceeasi functie, ca sa nu poata
@@ -10,7 +10,7 @@
 // Stergi intrarea din "updateDirs" (sau folderul) = dispare.
 
 function discover_sources($docroot) {
-    $metaFile = $docroot . '/meta/readme.json';
+    $metaFile = $docroot . '/meta/info.json';
     $meta = json_decode(@file_get_contents($metaFile), true);
     $dirs = is_array($meta['updateDirs'] ?? null) ? $meta['updateDirs'] : [];
 

@@ -1,13 +1,13 @@
 {
-  "pageTitle": "PS4 MODS — Pagina nu există",
-  "metaDescription": "Pagina cerută nu există pe serverul local.",
+  "pageTitle": "PS4 MODS — Page not found",
+  "metaDescription": "The requested page does not exist on the local server.",
   "brand": "PS4",
   "brandSub": "MODS",
   "code": "404",
-  "title": "Pagina nu există",
+  "title": "Page not found",
   "body": " ",
-  "hintOpen": "Deschide",
-  "hintNav": "Navighează",
+  "hintOpen": "Open",
+  "hintNav": "Navigate",
   "links": [
     {
       "label": "Hub",
