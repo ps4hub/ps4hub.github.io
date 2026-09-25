@@ -23,6 +23,13 @@ server {
 		add_header Accept-Ranges bytes;
 	}
 
+	# version.txt: update-checker-ul de pe Info trebuie sa primeasca un 404 real
+	# cand fisierul lipseste, nu fallback-ul catre index.html (altfel orice sursa
+	# fara version.txt arata mereu "update disponibil").
+	location ~ /version\.txt$ {
+		try_files $uri =404;
+	}
+
 	# listare folder pachete (fallback daca PHP nu merge)
 	location /packages/ {
 		autoindex on;
