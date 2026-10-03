@@ -7,6 +7,11 @@ server {
 	index index.php index.html index.htm index.nginx-debian.html;
 
 	server_name "$hostname";
+	access_log /var/log/nginx/access.log;
+
+	# PS4 User's Guide opens /document/<lang>/ps4/... - map it to the site root so
+	# relative links (info.html, *.php, meta/...) resolve to the real files
+	rewrite ^/document/[^/]+/ps4/?(.*)$ /$1 last;
 
 	include /etc/nginx/sites-dietpi/*.conf;
 

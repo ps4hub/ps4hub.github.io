@@ -6,7 +6,7 @@
   "section": "Package Installer",
   "back": "← Înapoi",
   "title": "Pachete din /packages",
-  "subtitle": "Selectează un fișier .pkg și consola îl descarcă direct de pe serverul local prin Remote Package Installer. Necesită Debug Settings active pe PS4.",
+  "subtitle": "Alege un fișier .pkg: serverul îl copiază pe consolă (FTP GoldHEN, în /data/pkg), apoi îl instalezi din meniul Debug Settings.",
   "hostLabel": "IP consolă",
   "foundLabel": "Găsite",
   "reload": "Reîncarcă",
@@ -15,7 +15,7 @@
   "emptyTitle": "Niciun pachet găsit",
   "emptyBody": "Pune fișierele .pkg în folderul packages/ de lângă index.html. Dacă serverul nu listează directoare, pune packages/packages.php — generează lista automat la fiecare accesare.",
   "infoTitle": "Înainte de instalare",
-  "infoBody": "Activează pe consolă Settings → Debug Settings → Game → Package Installer → Remote Package Install (serviciul ascultă pe portul 12800). Trimiterea e „fire and forget”: pagina nu poate citi răspunsul consolei, așa că urmărește progresul în Notifications / Download list pe PS4.",
+  "infoBody": "Cu GoldHEN pornit, apasă pe un pachet și așteaptă mesajul „Copiat”. Apoi deschide Settings → Debug Settings → Game → Package Installer și instalează-l din listă. Copierea durează (≈0,7 MB/s), lasă pagina deschisă. Navigare: stânga/dreapta/sus/jos.",
   "hintInstall": "Instalează",
   "hintNav": "Navighează",
   "readmeLink": "Info"

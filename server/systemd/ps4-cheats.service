@@ -1,0 +1,12 @@
+[Unit]
+Description=Download GoldHEN cheats and copy them to the PS4 (once per boot)
+After=network-online.target ifup@wlan0.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+Nice=10
+ExecStart=/bin/sh -c 'exec /usr/local/bin/ps4-cheats-sync.sh >>/var/log/ps4-cheats.log 2>&1'
+
+[Install]
+WantedBy=multi-user.target
